@@ -5,5 +5,5 @@ services:
   mycomposeapache:
     build: .
     ports:
-      - '30080:80'
+      - '30083:80'
       - '30082:8080'
