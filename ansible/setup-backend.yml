@@ -41,10 +41,10 @@
 
   
     - name: Deploy Custom Info file
-      copy: src=templates/atmosphere-v1.jar dest={{doc_root}}/atmosphere-v1.jar
+      copy: src=templates/my-app-1.0-SNAPSHOT.jar dest={{doc_root}}/my-app-1.0-SNAPSHOT.jar
 
     - name: Start Atmosphere Application. 
-      shell: nohup /usr/bin/java -jar {{doc_root}}/atmosphere-v1.jar & > nohup.out
+      shell: nohup /usr/bin/java -jar {{doc_root}}/my-app-1.0-SNAPSHOT.jar & > nohup.out
     
   handlers:
     - name: Restart Apache
