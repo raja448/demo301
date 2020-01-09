@@ -1,0 +1,9 @@
+version: '2'
+
+
+services:
+  mycomposeapache:
+    build: .
+    ports:
+      - '30083:80'
+      - '30082:8080'
