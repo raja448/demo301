@@ -41,7 +41,8 @@ provisioner "local-exec" {
         > jenkins-ci.ini;
         echo "[jenkins-ci]"| tee -a jenkins-ci.ini;
         export ANSIBLE_HOST_KEY_CHECKING=False;
-        echo "${aws_instance.backend.public_ip}" | tee -a jenkins-ci.ini;
-           EOT
+        echo "${aws_instance.backend.public_ip}" | tee -a jenkins-ci.ini; 
+        ansible-playbook -e  sshKey=${var.pvt_key} -i jenkins-ci.ini ../simple-java-maven-app/ansible/setup-backend.yml -u ubuntu -v
+    EOT
 }
 }
